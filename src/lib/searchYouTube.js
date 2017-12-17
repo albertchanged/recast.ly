@@ -1,9 +1,5 @@
-var searchYouTube = (options, callback) => {
-  
-  
-  
+var searchYouTube = (options, callback) => {  
   $.ajax({
-     // cache: false,
     data: {
       key: YOUTUBE_API_KEY,
       q: 'cats',
@@ -21,10 +17,6 @@ var searchYouTube = (options, callback) => {
       callback(results);
     }
   });
-
-  
-
-  
 };
 
 window.searchYouTube = searchYouTube;

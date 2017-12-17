@@ -4,7 +4,6 @@ class App extends React.Component {
     this.state = {
       videoList: window.exampleVideoData,
       currentVideo: window.exampleVideoData[0],
-      term: ''
     };
     
     window.searchYouTube({query: ''}, this.updateVideo.bind(this));
