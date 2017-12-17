@@ -3,9 +3,7 @@ var Search = (props) => {
     props.searchCB(document.getElementById('inputBox').value);
   };
   
-  var liveSearch = () => {
-    _.debounce(props.searchCB(document.getElementById('inputBox').value), 10000);
-  };
+  var liveSearch = _.debounce(function() { props.searchCB(document.getElementById('inputBox').value); }, 500);
 
   return (
     <div className="search-bar form-inline">

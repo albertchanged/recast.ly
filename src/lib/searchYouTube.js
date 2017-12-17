@@ -1,8 +1,8 @@
 var searchYouTube = (options, callback) => {  
   $.ajax({
     data: {
-      key: YOUTUBE_API_KEY,
-      q: 'cats',
+      key: window.YOUTUBE_API_KEY,
+      q: options.query,
       part: 'snippet',
       maxResults: 5,
       type: 'video',
