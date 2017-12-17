@@ -3,10 +3,11 @@ class App extends React.Component {
     super();
     this.state = {
       videoList: window.exampleVideoData,
-      currentVideo: window.exampleVideoData[0]
+      currentVideo: window.exampleVideoData[0],
+      term: ''
     };
     
-    window.searchYouTube({query: 'cats'}, this.updateVideo.bind(this));
+    window.searchYouTube({query: ''}, this.updateVideo.bind(this));
   }
   changeVideo(props) {
     this.setState({
@@ -19,12 +20,16 @@ class App extends React.Component {
       currentVideo: data[0]
     });
   }
+  search(event) {
+    event.preventDefault();
+    window.searchYouTube({query: this.state.term }, this.props.callback);
+  }
   render() {
     return (
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <Search />
+            <Search callback={this.updateVideo.bind(this)} />
           </div>
         </nav> 
         <div className="row">

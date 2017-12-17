@@ -8,7 +8,7 @@ var searchYouTube = (options, callback) => {
       key: YOUTUBE_API_KEY,
       q: 'cats',
       part: 'snippet',
-      maxResults: 10,
+      maxResults: 5,
       type: 'video',
       videoEmbeddable: true
     },
@@ -19,7 +19,6 @@ var searchYouTube = (options, callback) => {
     success: function(data) {
       var results = data.items;
       callback(results);
-
     }
   });
 
